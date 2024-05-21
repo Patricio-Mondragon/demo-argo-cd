@@ -6,11 +6,11 @@ metadata:
 spec:
   project: default
   source:
-    repoUrl: https://github.com/Patricio-Mondragon/demo-argo-cd.git
-    tragetRevision: HEAD
+    repoURL: https://github.com/Patricio-Mondragon/demo-argo-cd.git
+    targetRevision: HEAD
     path: dev
   destination: 
-    service: https://kubernetes.default.svc
+    server: https://kubernetes.default.svc
     namespace: myapp
 
   syncPolicy:
