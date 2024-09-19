@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-dummy
+  labels:
+    app: dummy-app
+spec:
+  replicas: 2  # Número de réplicas (puedes ajustar el número)
+  selector:
+    matchLabels:
+      app: dummy-app
+  template:
+    metadata:
+      labels:
+        app: dummy-app
+    spec:
+      containers:
+      - name: dummy-container
+        image: nginx:latest  # Imagen de contenedor (puedes cambiarla)
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        env:
+        - name: DUMMY_ENV_VAR
+          value: "dummy-value"
